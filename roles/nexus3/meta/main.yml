@@ -3,4 +3,5 @@
 dependencies:
 - devel
 - rpmdevel
+- oraclejdk8
 - nginx

@@ -38,30 +38,17 @@
     - nexus
     - build
 
-- name: Extract Nexus Data
-  command: tar zxf /tmp/nexus.tgz -C /{{nexus_data}} --wildcards 'sonatype-work*'
-  tags:
-    - system
-    - nexus
-    - build
 
 - name: Update executable files
   template: src={{ nexus_home }}/{{ item }} dest=/{{ nexus_home }}/{{ item }} mode=0755 owner=nexus group=nexus
   with_items:
     - bin/nexus
+    - bin/nexus.rc
   tags:
     - system
     - nexus
     - build
 
-- name: Update files
-  template: src={{ nexus_home }}/{{ item }} dest=/{{ nexus_home }}/{{ item }} mode=0644 owner=nexus group=nexus
-  with_items:
-    - conf/nexus.properties
-  tags:
-    - config
-    - nexus-config
-    - build
 
 - name: Symlink init.d
   file: src=/{{ nexus_home }}/bin/nexus dest=/etc/init.d/nexus owner=root group=root state=link
