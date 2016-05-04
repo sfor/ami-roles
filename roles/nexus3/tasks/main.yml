@@ -44,6 +44,7 @@
   with_items:
     - bin/nexus
     - bin/nexus.rc
+    - bin/nexus.vmoptions
   tags:
     - system
     - nexus
