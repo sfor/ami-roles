@@ -76,15 +76,6 @@
     - nexus
     - build
 
-- name: Nginx proxy
-  template: src=etc/nginx/conf.d/nexus.conf dest=/etc/nginx/conf.d/nexus.conf owner=root group=root mode=0644
-  notify:
-  - restart nginx
-  tags:
-    - config
-    - nexus-config
-    - build
-
 - name: Enable nexus
   service: name=nexus enabled=yes
   tags:
