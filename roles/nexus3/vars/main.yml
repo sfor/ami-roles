@@ -4,4 +4,3 @@
 nexus_url: http://download.sonatype.com/nexus/3/nexus-3.0.0-03-unix.tar.gz
 nexus_home: "{{ kenzanmedia_apps }}/nexus"
 nexus_data: "{{ kenzanmedia_data }}/nexus"
-nexus_dns: repo.kenzanmedia.build
